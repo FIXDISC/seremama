@@ -233,7 +233,7 @@ nav a:first-of-type {
   display: table-cell;
   text-align: left;
   font-size: 0.78rem;
-  vertical-align: middle;
+  vertical-align: top;
   padding-left: 10px;
   height: 20px;
   white-space: nowrap;
@@ -245,6 +245,7 @@ nav a:first-of-type {
 .cart_item_row{
   background-color: none;
   border:0;
+  vertical-align: top;
 }
 .cart_item_row:hover{
   background-color: #d7cefd;
@@ -258,6 +259,7 @@ nav a:first-of-type {
   -ms-animation: fadeIn .5s;
 }
 .boton_big{
+  text-align: center;
   box-sizing: border-box;
   width: 100%;
   height: 50px;

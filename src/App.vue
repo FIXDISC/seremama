@@ -30,10 +30,32 @@ export default {
       }
   },
   data: function() {
-  return {
-      n_items: 0,
-      despacho: 0,
-      total: 0
+      //localStorage.removeItem('cart');
+      let n_items = 0
+      let despacho = 0
+      let total= 0
+      if(JSON.parse(localStorage.getItem('cart'))==undefined){
+           n_items = 0;
+           total = 0;
+           despacho = 0;
+      }else{
+          let carro = JSON.parse(localStorage.getItem('cart'))
+          n_items = 0
+          total = 0
+          despacho = 20000
+          for(let i=0; i < carro.length; i++) {
+            let prod = parseInt(carro[i].price) * parseInt(carro[i].qty)
+            n_items = n_items + parseInt(carro[i].qty)
+            total = parseInt(total) + prod
+          }
+          total = parseInt(total) + parseInt(despacho)
+          
+      }
+    
+    return {
+      n_items: n_items,
+      despacho: despacho,
+      total: total
     }
   },
   setup(){

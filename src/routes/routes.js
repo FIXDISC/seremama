@@ -32,7 +32,6 @@ const router = createRouter({
       name: "Detalle",
       path: "/detalle/:id",
       component: DetallePage,
-      props: {products: [], buscador: ""}
     }
   ]
 });
