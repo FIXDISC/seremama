@@ -4,7 +4,7 @@
       <ul id="#v-for-object" :key="products">
         <div v-for="(value, propertyName, index) in products" :key="index" class="prods">
 
-          <div class="prods_cont_in" v-on:click="add_product(value)">
+          <div class="prods_cont_in" v-on:click="go_detalle(value)">
             <div class="prods_brand">{{ value.brand }}</div>
             <div class="prods_img">
               <img v-bind:src="'https://'+ value.image" style="height:100%">
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import router from '../../routes/routes'
+
 export default {
   props: {
     buscador: String,
@@ -59,6 +61,9 @@ export default {
         document.getElementById('categorias_options').style.display='none';
     },
     substr: function(val){ return val.substr(0,70) },
+    go_detalle: function(value){
+      router.push('/detalle/'+value.id)
+    },
     add_product: function(item){
       //let despacho = this.$root.despacho
       let total = 0

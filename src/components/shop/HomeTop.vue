@@ -103,12 +103,12 @@
             </table>
           </div>
           <div class="cart_menu" style="padding-top:5px;">
-            <table width="100%">
+            <table width="100%" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="70%" style="text-align:right"><b>TOTAL:</b></td>
-                <td style="text-align:right; font-size:1.1rem">
-                  <span class="total">$ <b>{{ this.$root.total.toLocaleString().replace(/,/g, '.') }}</b>
-                  </span>
+                <td style="text-align:right; font-size:1.1rem;">
+                  <div class="total" style="position:relative; width:100%">$ <b>{{ this.$root.total.toLocaleString().replace(/,/g, '.') }}</b>
+                  </div>
                 </td>
               </tr>
             </table>
@@ -168,6 +168,7 @@ export default {
     },
     mouseover: function(){
       document.getElementById('cart_options').style.display='none';
+      document.getElementById('cart_options').focus()
       document.getElementById('user_options').style.display='block';
       document.getElementById('categorias_options').style.display='none';
     },    

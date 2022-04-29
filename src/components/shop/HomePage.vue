@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-on:mousemove="mouseout">
+  <div class="content" v-on:mousedown="mouseout" >
     <div class="prods_cont">
       <ul id="v-for-object">
         <div v-for="(value, propertyName, index) in products" :key="index" class="prods" >
@@ -38,6 +38,12 @@ export default {
     }
   },
   methods: {
+    mouseEnter: function(event) {
+      alert(JSON.stringify(event.type))
+            console.log('mouseneter');
+            this.popup = true;
+            this.$el.addEventListener('mousemove', this.mouseMove, false);
+        },
     mouseover: function(){
       document.getElementById('user_options').style.display='none';
       document.getElementById('cart_options').style.display='none';
@@ -53,7 +59,6 @@ export default {
       router.push('/detalle/'+value.id)
     },
     add_product: function(item){
-      //let despacho = this.$root.despacho
       let total = 0
       let despacho = 20000;
       this.$root.despacho = despacho
