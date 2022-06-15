@@ -33,6 +33,7 @@ export default {
       document.getElementById('buscador').value = ""
       let filter_products = []
       let prod = JSON.parse(localStorage.getItem('products'))
+      console.log("PRODS: "+prod.length)
       filter_products = prod
       return filter_products
     }
@@ -40,7 +41,7 @@ export default {
   methods: {
     mouseEnter: function(event) {
       alert(JSON.stringify(event.type))
-            console.log('mouseneter');
+            console.log('mousenter');
             this.popup = true;
             this.$el.addEventListener('mousemove', this.mouseMove, false);
         },

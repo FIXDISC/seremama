@@ -1,5 +1,5 @@
 <template>
-  <div class="content_det" v-on:mouseover="mouseover" v-on:blur="mouseover" >
+  <div class="content_det" v-on:mouseover="mouseover" >
 
       <div class="detalle_prod">
 
@@ -60,7 +60,6 @@
       },
       methods:{
         mouseover: function(){
-          alert("D")
           document.getElementById('user_options').style.display='none';
           document.getElementById('cart_options').style.display='none';
           document.getElementById('categorias_options').style.display='none';
